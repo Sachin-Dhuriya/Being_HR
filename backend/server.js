@@ -37,6 +37,7 @@ app.get("/",async (req,res)=>{
 })
 
 //------------------------------Leaderboard--------------------------------------
+/*From here the data from the MongoDB to the leaderboard is fetching*/ 
 /*app.get("/leaderboard",async(req,res)=>{
   try{
     let nominate = await nominateDate.find();
