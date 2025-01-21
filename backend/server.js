@@ -36,9 +36,21 @@ app.get("/",async (req,res)=>{
   }
 })
 
-
-
-
+//------------------------------Leaderboard--------------------------------------
+/*app.get("/leaderboard",async(req,res)=>{
+  try{
+    let nominate = await nominateDate.find();
+    nominate = nominate.sort((a, b) => {
+      const totalScoreA = a.votes + (a.juryVotes || 0);
+      const totalScoreB = b.votes + (b.juryVotes || 0);
+      return totalScoreB - totalScoreA;
+  });
+  res.json(nominate)
+  } catch(error){
+    res.status(500).json({message : 'Failed to fetch leaderboard data', error })
+  }
+})
+*/
 
 app.listen(port,()=>{
   console.log(`App is listenning on port${port}.....`);

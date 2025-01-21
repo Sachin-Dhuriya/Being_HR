@@ -54,8 +54,8 @@ function LeaderBoard() {
           <button>Best DEI Advocate</button>
           <button>Best Referral Champion</button>
         </div>
-      </div>
-                     {filteredNominees} {/* Pass filtered nominees */}
+        </div>
+      <NomineeTable nominees={filteredNominees} /> {/* Pass filtered nominees */}
     </div>
   );
 }
