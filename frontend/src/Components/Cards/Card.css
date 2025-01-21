@@ -1,0 +1,272 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+  }
+  
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+    margin: 20px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #007bff, #ff9800);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Card Container */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  /* Card Styles */
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Header Section */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+.a-l {
+    margin-left: 0%;
+}
+  
+  .badges {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .badge {
+    background-color: #007bff;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  /* Subtitle and Status */
+  .subtitle {
+    margin: 8px 0;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .status {
+    margin: -4px 0;
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .status-badge {
+    display: inline-block;
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .votes, .jury {
+    margin-left: 8px;
+  }
+  
+  /* Buttons */
+  .buttons {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .profile-btn, .vote-btn {
+    border: none;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .profile-btn {
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+  }
+  
+  .vote-btn {
+    background-color: #ff9800;
+    color: #fff;
+  }
+  
+  /* Nomination Text */
+  .nomination {
+    margin-top: -10px;
+    font-size: 12px;
+    color: #888;
+  }
+
+  /* Buttons */
+.profile-btn {
+    margin-left: -61px;
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.profile-btn span {
+    width: 10px;  /* Adjust size of the image */
+    height: 10px; /* Adjust size of the image */
+    background-size: cover;  /* Ensure the image covers the span */
+    background-position: center; /* Center the image */
+}
+
+.profile-btn a {
+    white-space: nowrap;  /* Prevent the text from wrapping */
+    color: #fff;          /* Ensure text is white */
+    font-size: 12px;      /* Set a proper font size */
+}
+
+  
+  /* Responsive Design */
+@media (max-width: 1200px) {
+  /* Adjust the card container padding */
+  .card-container {
+    padding: 10px;
+  }
+
+  /* Ensure cards take full width for larger screens */
+  .card {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Adjust card layout for medium screens */
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+  }
+
+  /* Adjust button size */
+  .profile-btn,
+  .vote-btn {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Ensure cards take full width for smaller screens */
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* Adjust title font size */
+  h1 {
+    font-size: 30px;
+  }
+
+  /* Adjust badge font size */
+  .badge {
+    font-size: 10px;
+  }
+
+  /* Adjust profile button */
+  .profile-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  /* Adjust vote button */
+  .vote-btn {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  /* Further adjust card padding */
+  .card {
+    padding: 12px;
+  }
+
+  /* Adjust button layout */
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Ensure LinkedIn button text doesn't wrap */
+  .profile-btn a {
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Mobile screens */
+  .card-container {
+    padding: 5px;
+  }
+
+  /* Adjust font size of status, subtitle */
+  .subtitle {
+    font-size: 12px;
+  }
+
+  .status {
+    font-size: 10px;
+  }
+
+  .profile-btn {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .vote-btn {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+  

@@ -1,0 +1,78 @@
+/* App.css */
+.app {
+    padding: 20px;
+    background-color: white ;
+    height: auto;
+    color: white;
+  }
+  
+  .header {
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .header input {
+    padding: 4px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+  }
+  .category-buttons{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 2vh;
+  }
+  .category-buttons button {
+    background-color: white;
+    border: 1px solid #292929;
+    color: black;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    width: 20%;
+  }
+
+  .category-buttons button:hover {
+    background-color: rgb(187, 187, 187);
+  }
+  
+  .nominee-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .nominee-table th, .nominee-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+  }
+  
+  .nominee-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nominee-name {
+    font-weight: bold;
+  }
+  
+  .votes {
+    text-align: center;
+  }
+  

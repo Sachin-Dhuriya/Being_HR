@@ -1,0 +1,18 @@
+[
+    { "name": "Phil Salt", "company": "Jumio", "position": "Global TA Director", "category": "Top TA Leader", "votes": 102, "nominator": "Raj Singh" },
+    { "name": "Travis Head", "company": "Infosys", "position": "HR Manager", "category": "Top HR Leader", "votes": 87, "nominator": "Sita Sharma" },
+    { "name": "Pat Cummis", "company": "Facebook", "position": "Marketing Manager", "category": "Top Marketing Leader", "votes": 120, "nominator": "Sarah Lee" },
+    { "name": "Tim Devid", "company": "Microsoft", "position": "Software Engineer", "category": "Top Engineer", "votes": 200, "nominator": "Jane Smith" },
+    { "name": "Heinrich Klaasen", "company": "Apple", "position": "Design Lead", "category": "Top Designer", "votes": 180, "nominator": "Mike Johnson" },
+    { "name": "Nikolas Pooren", "company": "Amazon", "position": "Operations Manager", "category": "Top Operations Leader", "votes": 110, "nominator": "Anna Brown" },
+    { "name": "Glen Maxiwell", "company": "Tesla", "position": "Sales Director", "category": "Top Sales Leader", "votes": 95, "nominator": "Tom Hanks" },
+    { "name": "Rohit Sharma", "company": "Google", "position": "Product Manager", "category": "Top Product Leader", "votes": 150, "nominator": "John Doe" },
+
+    { "name": "Mitchal Stark", "company": "Netflix", "position": "Content Director", "category": "Top Content Leader", "votes": 140, "nominator": "Robert White" },
+    { "name": "Jasprit Bumrah", "company": "Spotify", "position": "Music Director", "category": "Top Music Leader", "votes": 170, "nominator": "Emily Davis" },
+    { "name": "Mohammed Shami", "company": "Twitter", "position": "Social Media Manager", "category": "Top Social Media Leader", "votes": 130, "nominator": "Chris Evans" },
+    { "name": "Rashid Khan", "company": "Snapchat", "position": "UX Designer", "category": "Top UX Leader", "votes": 115, "nominator": "Daniel Garcia" },
+    { "name": "Akel Hosein", "company": "LinkedIn", "position": "Recruitment Head", "category": "Top Recruiter", "votes": 160, "nominator": "Laura Martinez" },
+    { "name": "Wanindu Hasaranga", "company": "Slack", "position": "Community Manager", "category": "Top Community Leader", "votes": 105, "nominator": "James Wilson" },
+    { "name": "Arshdeep Singh", "company": "GitHub", "position": "Developer Advocate", "category": "Top Developer", "votes": 145, "nominator": "Patricia Miller" }
+]

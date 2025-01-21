@@ -1,0 +1,81 @@
+/* NomineeRow.css */
+.nominee-row {
+    background-color: #1e1e1e;
+    color: white;
+    border-bottom: 1px solid #444;
+    text-align: left;
+  }
+  
+  .nominee-row td {
+    padding: 15px;
+  }
+  
+  .nominee-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nominee-name {
+    font-weight: bold;
+    color: white;
+  }
+  
+  .nominee-title {
+    font-size: 0.9em;
+    color: #bbb;
+  }
+  .member-result{
+    display: flex;
+    justify-content: space-between;
+  }
+  .votes {
+    text-align: center;
+  }
+  
+  .community-votes {
+    color: #d08aff; /* Example color for community votes */
+  }
+  
+  .jury-votes {
+    color: #7fb3d5; /* Example color for jury votes */
+  }
+  
+  .total-score {
+    color: #27ae60; /* Example color for total score */
+  }
+  #num{
+    display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        background: rgba(156, 39, 176, 0.1);
+        color: rgb(206, 147, 216);
+        border: 1px solid rgba(156, 39, 176, 0.2);
+  }
+  #juryvotes{
+    display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        background: rgba(33, 150, 243, 0.1);
+        color: rgb(144, 202, 249);
+        border: 1px solid rgba(33, 150, 243, 0.2);
+  }
+  #totalscore{
+    display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        background: rgba(76, 175, 80, 0.1);
+        color: rgb(129, 199, 132);
+        border: 1px solid rgba(76, 175, 80, 0.2);
+  }

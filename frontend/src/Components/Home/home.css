@@ -1,0 +1,68 @@
+/* General Styles */
+.home {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+   
+  }
+  
+  /* Card Styles */
+  .card {
+    flex: 1 1 calc(33.333% - 20px); /* For large screens, 3 cards in a row */
+    box-sizing: border-box;
+    margin: 10px;
+    max-width: 300px;
+    margin-left: 2%;
+  }
+  
+  /* Make class styles */
+  .make {
+    display: flex;
+    color: white;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /* For screens smaller than 1200px (Tablets and smaller desktops) */
+  @media (max-width: 1200px) {
+    .card {
+      flex: 1 1 calc(50% - 20px); /* 2 cards per row */
+      max-width: 45%; /* Slightly smaller width for better spacing */
+    }
+  }
+  
+  /* For screens smaller than 768px (Tablets) */
+  @media (max-width: 768px) {
+    .grid {
+      margin-left: 0;
+      justify-content: center; /* Center the grid */
+    }
+  
+    .card {
+      flex: 1 1 calc(100% - 20px); /* 1 card per row */
+      max-width: 100%; /* Full width for each card */
+    }
+  }
+  
+  /* For screens smaller than 480px (Mobile Devices) */
+  @media (max-width: 480px) {
+    .home {
+      padding: 10px; /* Adjust padding for small screens */
+    }
+  
+    .grid {
+      margin-left: 0;
+      justify-content: center;
+    }
+  
+    .card {
+      margin: 5px;
+      max-width: 100%;
+    }
+  }
+  
