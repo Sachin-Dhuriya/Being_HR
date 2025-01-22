@@ -14,6 +14,7 @@ const ExpressError=require("./utils/ExpressError.js");
 
 
 // Middleware
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());

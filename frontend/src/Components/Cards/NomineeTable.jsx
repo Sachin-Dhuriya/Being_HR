@@ -1,4 +1,3 @@
-// NomineeTable.js
 import React from 'react';
 import NomineeRow from './NomineeRow';
 import './NomineeTable.css';
@@ -19,7 +18,8 @@ const NomineeTable = ({ nominees }) => {
       </thead>
       <tbody>
         {nominees.map((nominee, index) => (
-          <NomineeRow key={index} {...nominee} />
+          // Pass index + 1 as the rank to NomineeRow
+          <NomineeRow key={index} rank={index + 1} {...nominee} />
         ))}
       </tbody>
     </table>
