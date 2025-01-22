@@ -1,29 +1,31 @@
-import React, { useState } from 'react';
+// LeaderBoard.jsx
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import './LeaderBoard.css';
 import NomineeTable from '../Cards/NomineeTable';
 
-const nomineesData = [
-  { rank: '🏆', name: 'Jasprit Bumra', title: 'Lead TA Specialist', category: 'Best Leadership Recruiter', company: '247hire', communityVotes: '261', juryVotes: '0', totalScore: '2610' },
-  { rank: '🥈', name: 'Travis Head', title: 'Lead Tech Recruiter', category: 'Best Leadership Recruiter', company: 'Elastic Technologies India', communityVotes: '147', juryVotes: '0', totalScore: '1470' },
-  { rank: '🥉', name: 'Pat Cummins', title: 'Talent Acquisition Manager', category: 'Best Leadership Recruiter', company: 'Aspire Systems', communityVotes: '44', juryVotes: '0', totalScore: '440' },
-  { rank: '#4', name: 'Rohit Sharma', title: 'Lead TA Specialist', category: 'Best Leadership Recruiter', company: '247hire', communityVotes: '261', juryVotes: '0', totalScore: '2610' },
-  { rank: '#5', name: 'Glen Maxiwell', title: 'Lead Tech Recruiter', category: 'Best Leadership Recruiter', company: 'Elastic Technologies India', communityVotes: '147', juryVotes: '0', totalScore: '1470' },
-  { rank: '#6', name: 'Mitchal Stark', title: 'Talent Acquisition Manager', category: 'Best Leadership Recruiter', company: 'Aspire Systems', communityVotes: '44', juryVotes: '0', totalScore: '440' },
-  { rank: '#7', name: 'Jose Merciline', title: 'Lead TA Specialist', category: 'Best Leadership Recruiter', company: '247hire', communityVotes: '261', juryVotes: '0', totalScore: '2610' },
-  { rank: '#8', name: 'Rashid Khan', title: 'Lead Tech Recruiter', category: 'Best Leadership Recruiter', company: 'Elastic Technologies India', communityVotes: '147', juryVotes: '0', totalScore: '1470' },
-  { rank: '#9', name: 'Akel Hosein', title: 'Talent Acquisition Manager', category: 'Best Leadership Recruiter', company: 'Aspire Systems', communityVotes: '44', juryVotes: '0', totalScore: '440' },
-  { rank: '#10', name: 'Jose Merciline', title: 'Lead TA Specialist', category: 'Best Leadership Recruiter', company: '247hire', communityVotes: '261', juryVotes: '0', totalScore: '2610' },
-  { rank: '#11', name: 'Phil Salt', title: 'Lead Tech Recruiter', category: 'Best Leadership Recruiter', company: 'Elastic Technologies India', communityVotes: '147', juryVotes: '0', totalScore: '1470' },
-  { rank: '#12', name: 'Travis Head', title: 'Talent Acquisition Manager', category: 'Best Leadership Recruiter', company: 'Aspire Systems', communityVotes: '44', juryVotes: '0', totalScore: '440' },
-];
-
 function LeaderBoard() {
-  const [searchQuery, setSearchQuery] = useState(''); // Add state for search query
+  const [nomineesData, setNomineesData] = useState([]);  // State to store fetched data
+  const [searchQuery, setSearchQuery] = useState('');  // State for search query
+
+  // Fetch data from the backend when the component mounts
+  useEffect(() => {
+    const fetchNominees = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/leaderboard'); // Assuming your API endpoint is '/leaderboard'
+        setNomineesData(response.data); // Set the fetched data to state
+      } catch (error) {
+        console.error('Error fetching leaderboard data:', error);
+      }
+    };
+
+    fetchNominees();
+  }, []); // Empty dependency array ensures it runs only once when the component mounts
 
   // Filter nominees based on the search query
   const filteredNominees = nomineesData.filter((nominee) => 
-    nominee.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    nominee.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    nominee.fullName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    nominee.category.toLowerCase().includes(searchQuery.toLowerCase()) ||
     nominee.company.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
@@ -54,7 +56,7 @@ function LeaderBoard() {
           <button>Best DEI Advocate</button>
           <button>Best Referral Champion</button>
         </div>
-        </div>
+      </div>
       <NomineeTable nominees={filteredNominees} /> {/* Pass filtered nominees */}
     </div>
   );
