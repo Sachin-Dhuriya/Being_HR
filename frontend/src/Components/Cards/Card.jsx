@@ -29,7 +29,7 @@ const Card = ({ _id, nominationType, fullName, company, jobTitle, category, vote
       <div className="status">
         <span className="status-badge">{category}</span> <br /><br />
         <span className="votes">
-          <b>{voteCount}</b> <i className="icon">👍</i> votes
+          <b>{votes}</b> <i className="icon">👍</i> votes
         </span>
         <span className="jury">Jury Score: <b>0</b></span>
       </div>
