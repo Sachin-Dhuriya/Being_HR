@@ -7,18 +7,16 @@ import './home.css';
 function Home() {
   const { searchTerm } = useContext(SearchContext);
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true); // To handle loading state
-  const [error, setError] = useState(null); // To handle errors
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:5000/');
-        console.log(response.data); // Check the structure of the data here
         setData(response.data);
       } catch (error) {
         setError('Error fetching data');
-        console.error('Error fetching data:', error);
       } finally {
         setLoading(false);
       }
@@ -27,14 +25,20 @@ function Home() {
     fetchData();
   }, []);
 
-
   const filteredData = data.filter((item) =>
     (item?.fullName || '').toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  const handleVoteUpdate = (id, updatedVotes) => {
+    setData(prevData =>
+      prevData.map(item =>
+        item._id === id ? { ...item, votes: updatedVotes } : item
+      )
+    );
+  };
 
-  if (loading) return <div>Loading...</div>; // Display loading state
-  if (error) return <div>{error}</div>; // Display error message
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>{error}</div>;
 
   return (
     <div>
@@ -43,6 +47,7 @@ function Home() {
           filteredData.map((item, index) => (
             <Card
               key={index}
+              _id={item._id}
               nominationType={item.nominationType}
               fullName={item.fullName}
               company={item.company}
@@ -50,13 +55,12 @@ function Home() {
               category={item.category}
               votes={item.votes}
               peerFullName={item.peerFullName}
-              whyFit={item.whyFit}
               linkedIn={item.linkedIn}
-              phone={item.phone}
+              onVote={handleVoteUpdate} // Pass the vote update handler here
             />
           ))
         ) : (
-          <div>No data found</div> // Display message when no data is available
+          <div>No data found</div>
         )}
       </div>
     </div>

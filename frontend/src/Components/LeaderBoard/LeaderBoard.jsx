@@ -58,7 +58,7 @@ function LeaderBoard() {
         </div>
         <div className="category-buttons">
           <button onClick={() => handleCategoryClick('Best Tech Recruiter')}>Best Tech Recruiter</button>
-          <button onClick={() => handleCategoryClick('Best GTM / Business Recruiter')}>Best GTM / Business Recruiter</button>
+          <button onClick={() => handleCategoryClick('Best GTM/Business Recruiter')}>Best GTM/Business Recruiter</button>
           <button onClick={() => handleCategoryClick('Best Leadership Recruiter')}>Best Leadership Recruiter</button>
           <button onClick={() => handleCategoryClick('Top TA Leader')}>Top TA Leader</button>
           <button onClick={() => handleCategoryClick('Candidate Experience & Ops Pro')}>Candidate Experience & Ops Pro</button>
