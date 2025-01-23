@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const Joi = require('joi');
 const app = express();
 let port = 5000;
 
@@ -17,7 +18,8 @@ const ExpressError=require("./utils/ExpressError.js");
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.json());
+app.use(express.json()); // To parse JSON bodies
+app.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
 //-----------------------------------------Routes-------------------------------------------------
 
 //-------------------------------Jury Route---------------------------------------
@@ -84,6 +86,85 @@ app.post('/vote/:id', async (req, res) => {
     res.status(500).send('Error updating vote');
   }
 });
+
+//----------------------------------Nominate Route---------------------------
+//-----------------------It Deals with the Nomination Form
+app.post("/nominate", wrapAsync(async (req, res, next) => {
+  const schema = Joi.object({
+    nominationType: Joi.string().trim().required().messages({
+      "string.empty": "Nomination type is required.",
+    }),
+    fullName: Joi.string().trim().required().messages({
+      "string.empty": "Full name is required.",
+    }),
+    email: Joi.string().trim().email().required().messages({
+      "string.empty": "Email is required.",
+      "string.email": "Invalid email format.",
+    }),
+    linkedIn: Joi.string().trim().uri().required().messages({
+      "string.empty": "LinkedIn profile URL is required.",
+      "string.uri": "Invalid LinkedIn URL format.",
+    }),
+    phone: Joi.string()
+      .pattern(/^\d{10}$/)
+      .required()
+      .messages({
+        "string.empty": "Phone number is required.",
+        "string.pattern.base": "Phone number must be a 10-digit number.",
+      }),
+    company: Joi.string().trim().required().messages({
+      "string.empty": "Company name is required.",
+    }),
+    jobTitle: Joi.string().trim().required().messages({
+      "string.empty": "Job title is required.",
+    }),
+    category: Joi.string().trim().required().messages({
+      "string.empty": "Category is required.",
+    }),
+    whyFit: Joi.string().trim().optional(),
+    ideas: Joi.string().trim().optional(),
+    votes: Joi.number().integer().min(0).optional(),
+    votedBy: Joi.array().items(Joi.string().email()).optional(),
+    peerFullName: Joi.string().trim().default("self").optional(),
+    peerEmail: Joi.string().trim().email().optional().messages({
+      "string.email": "Invalid peer email format.",
+    }),
+    peerLinkedIn: Joi.string().trim().uri().optional().messages({
+      "string.uri": "Invalid peer LinkedIn URL format.",
+    }),
+    peerPhone: Joi.string()
+      .pattern(/^\d{10}$/)
+      .optional()
+      .messages({
+        "string.pattern.base": "Peer phone must be a 10-digit number.",
+      }),
+    peerCompany: Joi.string().trim().optional(),
+    peerJobTitle: Joi.string().trim().optional(),
+    relation: Joi.string().trim().optional(),
+  });
+
+  // Validate the  request body
+  const { error, value } = schema.validate(req.body, { abortEarly: false });
+  if (error) {
+    // Return a 400 response with detailed error messages
+    return res.status(400).json({
+      message: "Validation failed",
+      errors: error.details.map((detail) => detail.message),
+    });
+  }
+
+  try {
+    // Create and save the nomination 
+    const data = new nominateData(value);
+    await data.save();
+
+    // Respond success
+    res.status(201).json({ message: "Nomination submitted successfully", data });
+  } catch (err) {
+    console.error("Error saving nomination:", err);
+    next(new ExpressError(500, "Failed to save nomination"));
+  }
+}));
 
 //--------------------------------Error Handling------------------------------
 app.all("*",(req,res,next)=>{

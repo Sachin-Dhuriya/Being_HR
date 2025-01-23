@@ -7,7 +7,7 @@ function SearchBar() {
   return (
     <input
       type="text"
-      placeholder="Search by name, category, or nominator..."
+      placeholder="Search by Name....."
       className="w-full p-2 rounded border"
       style={{
         color: "black",
