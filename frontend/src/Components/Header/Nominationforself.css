@@ -1,0 +1,107 @@
+
+  .nomination-container {
+    background: #ffffff;
+    margin-top: 10px;
+    color: #333;
+    padding: 30px 40px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: bold;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  input[type="radio"] {
+    margin-right: 10px;
+  }
+  
+  .radio-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .btn-next {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .btn-next:hover {
+    background-color: #444;
+    color: #fff;
+    transform: scale(1.05);
+  }
+  
+  .n-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .n-popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+  }
+  
+  .n-popup h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .n-popup p {
+    margin: 10px 0;
+  }
+  
+  

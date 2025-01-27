@@ -1,0 +1,64 @@
+/* SignInPage.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+  }
+  
+  .signin-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f9;
+  }
+  
+  .signin-card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .signin-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333333;
+    margin-bottom: 16px;
+  }
+  
+  .signin-description {
+    font-size: 16px;
+    color: #666666;
+    margin-bottom: 24px;
+  }
+  
+  .linkedin-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: #0077b5;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .linkedin-button:hover {
+    background-color: #005582;
+  }
+  
+  .linkedin-icon {
+    margin-right: 8px;
+    height: 20px;
+    width: 20px;
+  }
+  
