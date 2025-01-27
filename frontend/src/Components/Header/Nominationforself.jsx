@@ -157,6 +157,10 @@ function Nominationforself() {
               <option value="Best DEI Advocate">Best DEI Advocate</option>
               <option value="Best Leadership Recruiter">Best Leadership Recruiter</option>
               <option value="Best Tech Recruiter">Best Tech Recruiter</option>
+              <option value="Best GTM/Business Recruiter">Best GTM/Business Recruiter</option>
+              <option value="Candidate Experience & Ops Pro">Candidate Experience & Ops Pro</option>
+              <option value="Best Employer Branding Champion">Best Employer Branding Champion</option>
+              <option value="Best Referral Champion">Best Referral Champion</option>
             </select>
 
             <div className="form-navigation">
