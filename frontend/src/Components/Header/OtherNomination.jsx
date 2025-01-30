@@ -74,10 +74,10 @@ function OtherNomination() {
         setShowPopup(true); // Show success popup
         setTimeout(() => {
           navigate('/'); // Redirect to homepage after 3 seconds
-        }, 3000); // 3-second delay before redirect
+        }, 2000); // 2-second delay before redirect
       } else {
         const data = await response.json();
-        alert('Error: ' + data.errors);
+        alert(data.errors);
       }
     } catch (error) {
       console.error('Error submitting nomination:', error);

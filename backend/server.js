@@ -3,8 +3,11 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const Joi = require('joi');
+require('dotenv').config();
+require('./models/dbConnect');
 const app = express();
-let port = 5000;
+const PORT = process.env.PORT || 5000;
+const authRoutes = require("./routes/authRoutes.js")
 
 const Jury = require("./models/jury.js")
 const nominateData = require("./models/nominate.js")
@@ -17,6 +20,7 @@ const ExpressError=require("./utils/ExpressError.js");
 // Middleware
 
 app.use(cors());
+app.use('/auth', authRoutes); // <- NEW LINE
 app.use(bodyParser.json());
 app.use(express.json()); // To parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // To parse URL-encoded bodies
@@ -60,10 +64,6 @@ app.get("/leaderboard",wrapAsync(async(req,res, next)=>{
   }
 })) 
 
-
-app.listen(port,()=>{
-  console.log(`App is listenning on port${port}.....`);
-})
 //--------------------------------Vote---------------------------------------
 app.post('/vote/:id', async (req, res) => {
   
@@ -175,3 +175,8 @@ app.use((err, req, res, next) => {
   let{status=500,message="something went wrong "}=err;
   res.status(status).json(message);
 });
+
+//------------------------------------Listenning Port---------------------------------
+app.listen(PORT,()=>{
+  console.log(`App is listenning on port${PORT}.....`);
+})

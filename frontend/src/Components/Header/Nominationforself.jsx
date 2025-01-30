@@ -55,7 +55,7 @@ function Nominationforself() {
         setShowPopup(true); // Show the success pop-up
         setTimeout(() => {
           navigate('/'); // Redirect to home page after 3 seconds
-        }, 3000); // Redirect after 3 seconds (time to view the pop-up)
+        }, 2000); // Redirect after 2 seconds (time to view the pop-up)
       } else {
         const data = await response.json();
         alert('Error: ' + data.errors); // Handle error display

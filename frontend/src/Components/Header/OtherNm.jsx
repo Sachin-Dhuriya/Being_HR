@@ -3,7 +3,6 @@ import './OtherNm.css'
 
 function OtherNm() {
   return (
-
     <div>
          <form id="nominateForm" action="/submitnomination" method="POST">
        <div className="form-step" id="step2">
