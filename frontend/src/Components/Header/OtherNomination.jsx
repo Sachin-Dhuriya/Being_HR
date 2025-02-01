@@ -186,7 +186,7 @@ function OtherNomination() {
             {/* New Nomination Type Field */}
 
             <div className="form-navigation">
-              <button type="button" onClick={nextStep} className="btn-next">
+             <button type="button" onClick={nextStep} className="btn-next">
                 Next
               </button>
             </div>
@@ -278,7 +278,7 @@ function OtherNomination() {
               </button>
               <button type="submit" className="btn-submit">
                 Submit
-              </button>
+              </button> 
             </div>
           </div>
         )}

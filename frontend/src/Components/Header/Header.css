@@ -84,6 +84,34 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 50px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.user-name {
+  font-weight: bold;
+  color: #fff;
+}
+
+.logout-button {
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .searchbara {

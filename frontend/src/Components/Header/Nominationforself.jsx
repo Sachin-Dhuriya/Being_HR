@@ -58,7 +58,7 @@ function Nominationforself() {
         }, 2000); // Redirect after 2 seconds (time to view the pop-up)
       } else {
         const data = await response.json();
-        alert('Error: ' + data.errors); // Handle error display
+        alert(data.errors); // Handle error display
       }
     } catch (error) {
       console.error('Error submitting nomination:', error);
@@ -164,7 +164,8 @@ function Nominationforself() {
             </select>
 
             <div className="form-navigation">
-              <button type="button" className="btn-next" onClick={handleNext}>Next</button>
+            {/*<button type="submit" className="btn btn-submit">Submit</button>*/}
+              <button type="button" className="btn-next" onClick={handleNext}>Next</button> 
             </div>
           </div>
         )}
@@ -197,7 +198,7 @@ function Nominationforself() {
 
             <div className="form-navigation">
               <button type="button" className="btn" onClick={() => setCurrentStep(1)}>Previous</button>
-              <button type="submit" className="btn btn-submit">Submit</button>
+              <button type="submit" className="btn btn-submit">Submit</button> 
             </div>
           </div>
         )}
